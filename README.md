@@ -13,16 +13,17 @@
 以上功能可随意组合.可以单张图打一个swf包,也可以多素材打成一个swf包.
 
 
- ### 1.图片配置格式:
+### 1.图片配置格式:
 
  `<bitmap source_path="资源绝对地址" link_name="导出类名,缺省值" quality="压缩品质,缺省值"/>`
 
- ### 2.音频配置格式:
+### 2.音频配置格式:
 
  `<sound source_path="资源绝对地址" link_name="导出类名,缺省值" bit="比特率.枚举值:(8 kbps,16 kbps,20
 kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)" stereo="是否是立体声(true),单声道(false)" quality="压缩品质.枚举值(Fast,Medium,Best)"/>`
 
- ### 3.SimpleButton配置格式:
+
+### 3.SimpleButton配置格式:
 
 	`<button item_name="按钮名" link_name="导出类名,缺省值">
 		<layer name="图层名">
@@ -34,7 +35,7 @@ kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)
 		<!--layer无限插入-->
 	</button>`
 
- ### 4.影片剪辑配置格式:
+### 4.影片剪辑配置格式:
 
   `<movie  item_name="影片剪辑名" link_name="导出类名,缺省值">
 		<layer name="图层名">
@@ -44,7 +45,7 @@ kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)
 		<!--layer无限插入-->
 	</movie>`
 
- ### 5.字体配置格式:
+### 5.字体配置格式:
 
   `<font item_name="元件名称" font_name="嵌入字体名称" link_name="导出类名" is_FTE="是否使用FTE引擎" bold="加粗(true,false)" italic="斜体(true,false)" embed_ranges="字体嵌入对话框中可以选择的项目对应 like 1|3|5">
  		<![CDATA[嵌入的字符]]>
