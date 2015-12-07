@@ -15,7 +15,7 @@
 <bitmap source_path="资源绝对地址" link_name="导出类名,缺省值" quality="压缩品质,缺省值"/>
 ```
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 source_path|资源绝对地址|D:/assets/1.png
 link_name|导出类名|Image
@@ -27,7 +27,7 @@ quality|压缩品质|80
 kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)" stereo="是否是立体声(true),单声道(false)" quality="压缩品质.枚举值(Fast,Medium,Best)"/>
 ```
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 source_path|资源绝对地址|D:/assets/click.mp3
 link_name|导出类名|GameSound
@@ -50,20 +50,20 @@ quality|音频品质|Best
 ```
 button
 
-参数|介绍|示例
----|---|---
-item_name|按钮名|btn1
+参数|简介|示例    参数|简介|示例
+---|---|---     ---|---|---
+item_name|按钮名|btn1    item_name|按钮名|btn1
 link_name|导出类名|GameBtn
 
 layer
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 name|图层名|layer1
 
 frame 图片帧
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 start_index|开始帧|1
 end_index|结束帧(包含结束帧)|2
@@ -75,7 +75,7 @@ quality|图片品质|80
 
 frame 音频帧
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 start_index|开始帧|1
 end_index|结束帧(包含结束帧)|2
@@ -98,20 +98,20 @@ label|帧标签|sound_label
 
 movie
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 item_name|影片剪辑名|movie1
 link_name|导出类名|GameMovie
 
 layer
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 name|图层名|layer1
 
 frame 图片帧
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 start_index|开始帧|1
 end_index|结束帧(包含结束帧)|2
@@ -131,7 +131,7 @@ quality|图片品质|80
 
 font 
 
-参数|介绍|示例
+参数|简介|示例
 ---|---|---
 item_name|字体元件名称|font1
 font_name|嵌入字体名称|Arial
