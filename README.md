@@ -50,8 +50,8 @@ kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)
 ```
 标签|介绍|参数|示例
 ---|---|---|---
-button | null | null | null 
-null | 按钮名 | item_name | btn1
+button |   |   |   
+  | 按钮名 | item_name | btn1
 | 导出类名 | link_name | GameBtn
 
 
