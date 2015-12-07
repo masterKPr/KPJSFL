@@ -12,7 +12,7 @@
 ##### 1.图片配置格式:
 ```xml
 <bitmap source_path="" link_name="" quality=""/>
-<!--bitmap无限插入-->
+<!--bitmap后续插入-->
 ```
 ###### bitmap标签参数
 参数|简介|示例|提示
@@ -24,7 +24,7 @@ quality|压缩品质|80|缺省(0)则不压缩
 ##### 2.音频配置格式:
 ```xml
 <sound source_path="" link_name="" bit="" stereo="" quality=""/>
-<!--sound无限插入-->
+<!--sound后续插入-->
 ```
 ###### sound标签参数
 参数|简介|示例|提示
@@ -43,11 +43,11 @@ quality|音频品质|Best|支持以下值:<br>Fast,Medium,Best
 		<frame start_index="" end_index="" quality="" label="" source_path="" x="" y=""/>
 		<!--亦可插入音频帧,包含如下参数(如果需要音频压缩请先导入音频素材,通过sound标签-->
 		<frame start_index="" end_index="" source_path="" label=""/>
-		<!--frame无限插入-->
+		<!--frame后续插入-->
 	</layer>
-	<!--layer无限插入-->
+	<!--layer后续插入-->
 </button>
-<!--button无限插入-->
+<!--button后续插入-->
 ```
 
 ###### button标签参数
@@ -88,11 +88,11 @@ label|帧标签|sound_label|缺省,用于标记的帧标签
 <movie  item_name="" link_name="">
 	<layer name="">
         <frame start_index="" end_index="" quality="" label="" source_path="" x="" y=""/>
-        <!--frame无限插入-->
+        <!--frame后续插入-->
     </layer>
-    <!--layer无限插入-->
+    <!--layer后续插入-->
 </movie>
-<!--movie无限插入-->
+<!--movie后续插入-->
 ```
 
 ###### movie标签参数
@@ -123,7 +123,7 @@ quality|图片品质|80|缺省(0)则不压缩
 <font item_name="" font_name="" link_name="" is_FTE="" bold="" italic="" embed_ranges="">
     <![CDATA[]]>
 </font>
-<!--font无限插入-->
+<!--font后续插入-->
 ```
 
 ###### font标签参数
