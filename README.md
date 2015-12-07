@@ -14,11 +14,28 @@
 ```xml
 <bitmap source_path="资源绝对地址" link_name="导出类名,缺省值" quality="压缩品质,缺省值"/>
 ```
+
+介绍|参数|示例
+---|---|---
+资源绝对地址|source_path|D:/assets/1.png
+导出类名|link_name|Image
+压缩品质|quality|80
+
 ###### 2.音频配置格式:
 ```xml
 <sound source_path="资源绝对地址" link_name="导出类名,缺省值" bit="比特率.枚举值:(8 kbps,16 kbps,20
 kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)" stereo="是否是立体声(true),单声道(false)" quality="压缩品质.枚举值(Fast,Medium,Best)"/>
 ```
+
+介绍|参数|示例
+---|---|---
+资源绝对地址|source_path|D:/assets/click.mp3
+导出类名|link_name|GameSound
+比特率|bit|64 kbps
+是否立体声|stereo|false
+音频品质|quality|Best
+
+
 ###### 3.SimpleButton配置格式:
 ```xml
 <button item_name="按钮名" link_name="导出类名,缺省值">
@@ -31,6 +48,29 @@ kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)
 	<!--layer无限插入-->
 </button>
 ```
+标签|介绍|参数|示例
+---|---|---|---
+button|
+|按钮名|item_name|btn1
+|导出类名|link_name|GameBtn
+layer|图层
+|图层名|name|layer1
+frame|图片帧
+|开始帧|start_index|1
+|结束帧(包含结束帧)|end_index|2
+|资源绝对地址|source_path|D:/assets/1.png
+|x坐标|x|0
+|y坐标|y|0
+|帧标签|label|assets_label
+|图片品质|quality|80
+frame|音频帧
+|开始帧|start_index|1
+|结束帧(包含结束帧)|end_index|2
+|音频绝对地址|source_path|D:/assets/click.mp3
+|帧标签|label|sound_label
+
+
+
 ###### 4.影片剪辑配置格式:
 ```xml
 <movie  item_name="影片剪辑名" link_name="导出类名,缺省值">
@@ -49,3 +89,7 @@ kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)
 ```
 textField,matrix控制等功能待续. <br>
 基于域的加载管理,安全省心.
+
+
+
+
