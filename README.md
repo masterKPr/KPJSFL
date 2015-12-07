@@ -139,7 +139,7 @@ link_name|导出类名|MyFont
 is_FTE|是否使用FTE引擎|false
 bold|加粗|true
 italic|斜体|false
-embed_ranges|字体嵌入对话框中可以选择的项目对应| ``` 1 -| 2 -| 3 ```
+embed_ranges|字体嵌入对话框中可以选择的项目对应| ```1|2|3```
 CDATA节点|嵌入字符|abc
 
 textField,matrix控制等功能待续. <br>
