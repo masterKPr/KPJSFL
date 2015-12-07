@@ -50,24 +50,9 @@ kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)
 ```
 标签|介绍|参数|示例
 ---|---|---|---
-button|
-\|按钮名|item_name|btn1
-|导出类名|link_name|GameBtn
-layer|图层
-|图层名|name|layer1
-frame|图片帧
-|开始帧|start_index|1
-|结束帧(包含结束帧)|end_index|2
-|资源绝对地址|source_path|D:/assets/1.png
-|x坐标|x|0
-|y坐标|y|0
-|帧标签|label|assets_label
-|图片品质|quality|80
-frame|音频帧
-|开始帧|start_index|1
-|结束帧(包含结束帧)|end_index|2
-|音频绝对地址|source_path|D:/assets/click.mp3
-|帧标签|label|sound_label
+button | null | null | null 
+null | 按钮名 | item_name | btn1
+| 导出类名 | link_name | GameBtn
 
 
 
