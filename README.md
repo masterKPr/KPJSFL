@@ -15,11 +15,11 @@
 <bitmap source_path="资源绝对地址" link_name="导出类名,缺省值" quality="压缩品质,缺省值"/>
 ```
 
-介绍|参数|示例
+参数|介绍|示例
 ---|---|---
-资源绝对地址|source_path|D:/assets/1.png
-导出类名|link_name|Image
-压缩品质|quality|80
+source_path|资源绝对地址|D:/assets/1.png
+link_name|导出类名|Image
+quality|压缩品质|80
 
 ###### 2.音频配置格式:
 ```xml
@@ -27,13 +27,13 @@
 kbps,24 kbps,32 kbps,48 kbps,56 kbps,64 kbps,80 kbps,112 kbps,128 kbps,160 kbps)" stereo="是否是立体声(true),单声道(false)" quality="压缩品质.枚举值(Fast,Medium,Best)"/>
 ```
 
-介绍|参数|示例
+参数|介绍|示例
 ---|---|---
-资源绝对地址|source_path|D:/assets/click.mp3
-导出类名|link_name|GameSound
-比特率|bit|64 kbps
-是否立体声|stereo|false
-音频品质|quality|Best
+source_path|资源绝对地址|D:/assets/click.mp3
+link_name|导出类名|GameSound
+bit|比特率|64 kbps
+stereo|是否立体声|false
+quality|音频品质|Best
 
 
 ###### 3.SimpleButton配置格式:
