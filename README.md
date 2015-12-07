@@ -48,26 +48,40 @@ quality|音频品质|Best
 	<!--layer无限插入-->
 </button>
 ```
-标签|介绍|参数|示例
----|---|---|---
-button|
- |按钮名|item_name|btn1
- |导出类名|link_name|GameBtn
-layer|图层
- |图层名|name|layer1
-frame|图片帧
- |开始帧|start_index|1
- |结束帧(包含结束帧)|end_index|2
- |资源绝对地址|source_path|D:/assets/1.png
- |x坐标|x|0
- |y坐标|y|0
- |帧标签|label|assets_label
- |图片品质|quality|80
-frame|音频帧
- |开始帧|start_index|1
- |结束帧(包含结束帧)|end_index|2
- |音频绝对地址|source_path|D:/assets/click.mp3
- |帧标签|label|sound_label
+button
+
+参数|介绍|示例
+---|---|---
+item_name|按钮名|btn1
+link_name|导出类名|GameBtn
+
+layer
+
+参数|介绍|示例
+---|---|---
+name|图层名|layer1
+
+frame 图片帧
+
+参数|介绍|示例
+---|---|---
+start_index|开始帧|1
+end_index|结束帧(包含结束帧)|2
+source_path|资源绝对地址|D:/assets/1.png
+x|x坐标|0
+y|y坐标|0
+label|帧标签|assets_label
+quality|图片品质|80
+
+frame 音频帧
+
+参数|介绍|示例
+---|---|---
+start_index|开始帧|1
+end_index|结束帧(包含结束帧)|2
+source_path|音频绝对地址|D:/assets/click.mp3
+label|帧标签|sound_label
+
 
 
 
@@ -81,12 +95,53 @@ frame|音频帧
     <!--layer无限插入-->
 </movie>
 ```
+
+movie
+
+参数|介绍|示例
+---|---|---
+item_name|影片剪辑名|movie1
+link_name|导出类名|GameMovie
+
+layer
+
+参数|介绍|示例
+---|---|---
+name|图层名|layer1
+
+frame 图片帧
+
+参数|介绍|示例
+---|---|---
+start_index|开始帧|1
+end_index|结束帧(包含结束帧)|2
+source_path|资源绝对地址|D:/assets/1.png
+x|x坐标|0
+y|y坐标|0
+label|帧标签|assets_label
+quality|图片品质|80
+
+
 ###### 5.字体配置格式:
 ```xml
 <font item_name="元件名称" font_name="嵌入字体名称" link_name="导出类名" is_FTE="是否使用FTE引擎" bold="加粗(true,false)" italic="斜体(true,false)" embed_ranges="字体嵌入对话框中可以选择的项目对应 like 1|3|5">
     <![CDATA[嵌入的字符]]>
 </font>
 ```
+
+font 
+
+参数|介绍|示例
+---|---|---
+item_name|字体元件名称|font1
+font_name|嵌入字体名称|Arial
+link_name|导出类名|MyFont
+is_FTE|是否使用FTE引擎|false
+bold|加粗|true
+italic|斜体|false
+embed_ranges|字体嵌入对话框中可以选择的项目对应| ``` 1 -| 2 -| 3 ```
+CDATA节点|嵌入字符|abc
+
 textField,matrix控制等功能待续. <br>
 基于域的加载管理,安全省心.
 
