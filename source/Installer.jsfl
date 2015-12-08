@@ -1,3 +1,9 @@
+/**
+*@author:fangtao
+*@date:2014-12-08
+*@support:525398535@qq.com
+*/
+
 var folder_name = "KPJSFL";
 var code_list = ["GlobalLibs.jsfl", "CreateScript.jsfl"];
 var current_dir = fl.scriptURI.substr(0, fl.scriptURI.lastIndexOf("/") + 1);
