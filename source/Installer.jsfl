@@ -10,7 +10,7 @@ for each(var code_name in code_list) {
 	FLfile.createFolder(folder_path);
 	var target = folder_path + code_name;
 	if (FLfile.exists(target)) {
-		FLfile.remove(target);
+		FLfile.remove(target); 
 	}
 	FLfile.copy(source, target);
 }
