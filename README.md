@@ -9,7 +9,7 @@
 以上功能可随意组合.
 
 Installer.jsfl是用于安装的脚本运行后导入系统库.
-test1
+test2
 ##### 1.图片配置格式:
 ```xml
 <bitmap source_path="" link_name="" quality=""/>
