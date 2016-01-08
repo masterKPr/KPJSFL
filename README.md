@@ -1,15 +1,25 @@
 # KPJSFL
   KPJSFL是通过配置生成文档的脚本,是基于域加载的素材打包好帮手.
-##### 用途
+##### 功能
 1. 图片swf打包,并附带压缩处理. 
 2. 音频swf打包,并附带比特压缩处理. 
 3. SimpleButton按钮生成,生成带帧标签,带图层,带交互事件音效,带坐标定位的按钮. 
 4. 影片剪辑生成,生成带帧标签,带图层,带音效(不推荐),带坐标定位的影片剪辑.
 5. 字体打包,基于flash professional的字体嵌入swf打包.
-以上功能可随意组合.
 
-Installer.jsfl是用于安装的脚本运行后导入系统库.
-test2
+##### 项目基于Adobe Flash Professional CC制作,其他版本基本可用,但不提供支持
+
+
+Installer.jsfl是用于安装的脚本运行后导入系统位置.<br/>
+在安装脚本执行后可以通过以下方式导入.
+```js
+var file = fl.configURI + 'KPJSFL/CreateScript.jsfl';
+fl.runScript(file);
+```
+
+参阅examples文件夹
+
+
 ##### 1.图片配置格式:
 ```xml
 <bitmap source_path="" link_name="" quality=""/>
@@ -141,6 +151,9 @@ CDATA节点|嵌入字符|abc|自由输入
 
 textField,matrix控制等功能待续. <br>
 基于域的加载管理,安全省心.
+
+## support
+Email:masterkpr@gmail.com
 
 
 
