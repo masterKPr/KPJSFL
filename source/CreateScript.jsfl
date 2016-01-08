@@ -8,12 +8,12 @@ var current_directory = fl.scriptURI.substr(0, fl.scriptURI.lastIndexOf("/") + 1
 
 fl.runScript(current_directory + "GlobalLibs.jsfl");
 
-create_doc_path(get_current_path() + "config.xml");//测试目录下的config.xml脚本
+//create_doc_path(get_current_path() + "config.xml");//测试目录下的config.xml脚本
 
 create_doc_path.help = "通过配置表地址创建文档并导出";
 function create_doc_path(path) {
-	config_str = load_config(path);
-	config = XML(config_str);
+	var config_str = load_config(path);
+	var config = XML(config_str);
 	create_doc(config);
 }
 
