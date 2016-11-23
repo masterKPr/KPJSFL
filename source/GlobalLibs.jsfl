@@ -4,7 +4,7 @@
 *@support:525398535@qq.com
 */
 
-version = "1.1.5";
+version = "1.2.0";
 init();
 
 init.help = "启动设置";
@@ -207,11 +207,13 @@ function get_lib_name(path) {
 }
 
 import_to_lib.help = "导入图片并改名,会进行查重";
-function import_to_lib(doc, path) {
+function import_to_lib(doc, path)
+{
 	/*导入图片并改名,会进行查重*/
 	var uri = to_uri(path);
 	var exists = FLfile.exists(uri);
-	if (!exists) {
+	if (!exists)
+	{
 		throw "IOError:" + path;
 	}
 	var split = uri.split("/");
@@ -219,12 +221,29 @@ function import_to_lib(doc, path) {
 	var change_name = get_lib_name(path);
 
 	var already = get_item_by_name(doc, change_name);
-	if (already) {
+	if (already)
+	{
 		return already;
-	} else {
+	}
+	else
+	{
 		doc.importFile(uri, true, false, false);
 		var item = get_item_by_name(doc, file_name);
 		item.name = change_name;
 		return item;
 	}
+}
+
+xml_has_attribute.help = "检查判断当前节点XML是否含有key属性";
+function xml_has_attribute(xml,key)
+{
+	var xls = xml.attributes();
+	for each(var item in xls)
+	{
+		if(item.name()==key)
+		{
+			return true;
+		}
+	}
+	return false;
 }

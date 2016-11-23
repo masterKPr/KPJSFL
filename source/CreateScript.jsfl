@@ -166,10 +166,25 @@ function create_item(doc, xml_item, item_type) {
 				if (quality != 0) {
 					image_compress(item, quality);
 				}
+
 				lib.addItemToDocument({
 					x: x + item.hPixels / 2,
 					y: y + item.vPixels / 2
 				}, item.name);
+
+				var has_scaleX = xml_has_attribute(xml_frame,"scaleX")
+				var has_scaleY = xml_has_attribute(xml_frame,"scaleY")
+
+				if(has_scaleX){
+					var __scaleX=Number(xml_frame.@scaleX)
+					fl.getDocumentDOM().selection[0].scaleX=__scaleX;
+				}
+
+				if(has_scaleY){
+					var __scaleY=Number(xml_frame.@scaleY)
+					fl.getDocumentDOM().selection[0].scaleY=__scaleY;
+				}
+
 			}
 			var insert_frame = end_index - start_index;
 			timeline.insertFrames(insert_frame, false);
