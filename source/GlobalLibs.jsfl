@@ -1,10 +1,10 @@
-/**
-*@author:fangtao
-*@date:2014-11-01
-*@support:525398535@qq.com
-*/
+﻿/**
+ *@author:fangtao
+ *@date:2014-11-01
+ *@support:525398535@qq.com
+ */
 
-version = "1.2.0";
+version = "1.3.0";
 init();
 
 init.help = "启动设置";
@@ -169,12 +169,28 @@ function get_item_by_name(doc, name) {
 		}
 	}
 }
+get_item_by_link.help = "通过导出类名访问库里的项";
+function get_item_by_link(doc, link_name) {
+	/*通过导出类名访问库里的项*/
+	var lib = doc.library;
+	for each(var item in lib.items) {
+		if (item.linkageClassName == link_name) {
+			return item;
+		}
+	}
+}
 
 openDoc.help = "打开文档"
 function openDoc(path) {
 	/*打开文档*/
 	uri = to_uri(path);
 	return fl.openDocument(uri);
+}
+
+function file_exists(path) {
+	var uri = to_uri(path);
+	var exists = FLfile.exists(uri);
+	return exists;
 }
 
 publish_without_HTML.help = "将html发布去掉";
@@ -207,13 +223,11 @@ function get_lib_name(path) {
 }
 
 import_to_lib.help = "导入图片并改名,会进行查重";
-function import_to_lib(doc, path)
-{
+function import_to_lib(doc, path) {
 	/*导入图片并改名,会进行查重*/
 	var uri = to_uri(path);
 	var exists = FLfile.exists(uri);
-	if (!exists)
-	{
+	if (!exists) {
 		throw "IOError:" + path;
 	}
 	var split = uri.split("/");
@@ -221,12 +235,9 @@ function import_to_lib(doc, path)
 	var change_name = get_lib_name(path);
 
 	var already = get_item_by_name(doc, change_name);
-	if (already)
-	{
+	if (already) {
 		return already;
-	}
-	else
-	{
+	} else {
 		doc.importFile(uri, true, false, false);
 		var item = get_item_by_name(doc, file_name);
 		item.name = change_name;
@@ -235,13 +246,10 @@ function import_to_lib(doc, path)
 }
 
 xml_has_attribute.help = "检查判断当前节点XML是否含有key属性";
-function xml_has_attribute(xml,key)
-{
+function xml_has_attribute(xml, key) {
 	var xls = xml.attributes();
-	for each(var item in xls)
-	{
-		if(item.name()==key)
-		{
+	for each(var item in xls) {
+		if (item.name() == key) {
 			return true;
 		}
 	}

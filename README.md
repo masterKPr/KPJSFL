@@ -1,5 +1,6 @@
 # KPJSFL
   KPJSFL是通过配置生成文档的脚本,是基于域加载的素材打包好帮手.
+v1.3.0
 ##### 功能
 1. 图片swf打包,并附带压缩处理. 
 2. 音频swf打包,并附带比特压缩处理. 
@@ -31,6 +32,7 @@ fl.runScript(file);
 source_path|资源路径|D:/assets/1.png|硬盘绝对路径
 link_name|导出类名|Image|缺省为空
 quality|压缩品质|80|缺省(0)则不压缩
+rename|重命名|abc|缺省则不重命名
 
 ##### 2.音频配置格式:
 ```xml

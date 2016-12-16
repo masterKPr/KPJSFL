@@ -1,4 +1,4 @@
-/**
+﻿/**
  *@author:fangtao
  *@date:2015-12-06
  *@support:525398535@qq.com
@@ -23,13 +23,21 @@ function create_doc(config) {
 	var doc_dir = String(config.@doc_dir);
 	var publish_name = String(config.@publish_name);
 	var doc_class = String(config.@doc_class);
+	var is_update = String(config.@update) == "true";
+
 
 	if (doc_dir == "") {
 		doc_dir = get_current_path();
 	}
 	var doc_path = doc_dir + doc_name;
 
-	var doc = save_new_doc(doc_path);
+	var doc = null;
+	var exists = file_exists(doc_path);
+	if (is_update && exists) {
+		doc = openDoc(doc_path);
+	} else {
+		doc = save_new_doc(doc_path);
+	}
 	var lib = doc.library;
 
 	doc.docClass = doc_class;
@@ -41,7 +49,12 @@ function create_doc(config) {
 
 	var bitmap_list = config.bitmap;
 	for each(var xml_bitmap in bitmap_list) {
-		create_bitmap(doc, xml_bitmap);
+		if (is_update) {
+			update_bitmap(doc, xml_bitmap);
+		} else {
+			create_bitmap(doc, xml_bitmap);
+		}
+
 	}
 
 	var movie_list = config.movie;
@@ -116,10 +129,37 @@ function create_bitmap(doc, xml_bitmap) {
 	var link_name = String(xml_bitmap.@link_name);
 	var quality = Number(xml_bitmap.@quality);
 	var item = import_to_lib(doc, source_path);
+
+	var has_name = xml_has_attribute(xml_bitmap, "rename");
+
+	if (has_name) {
+		item.name = String(xml_bitmap.@rename);
+	}
+
 	if (quality != 0) {
 		image_compress(item, quality);
 	}
 	set_item_link(item, link_name);
+}
+
+update_bitmap.help = "通过配置表的link_name在文档中更新图片";
+function update_bitmap(doc, xml_bitmap) {
+	var link_name = String(xml_bitmap.@link_name);
+	var has_name = xml_has_attribute(xml_bitmap, "rename");
+	var rename = String(xml_bitmap.@rename);
+
+	var item = get_item_by_link(doc, link_name);
+
+	if (item && has_name && item.name != rename) {
+		doc.library.deleteItem(item.name);
+		create_bitmap(doc, xml_bitmap);
+	} else if (item && has_name && item.name == rename) {
+		return; //存在 同名 跳过
+	} else {
+		create_bitmap(doc, xml_bitmap);
+	}
+
+
 }
 
 create_item.help = "通过配置表在文档中创建导出元件 item_type包含movieclip,button";
@@ -172,17 +212,17 @@ function create_item(doc, xml_item, item_type) {
 					y: y + item.vPixels / 2
 				}, item.name);
 
-				var has_scaleX = xml_has_attribute(xml_frame,"scaleX")
-				var has_scaleY = xml_has_attribute(xml_frame,"scaleY")
+				var has_scaleX = xml_has_attribute(xml_frame, "scaleX")
+				var has_scaleY = xml_has_attribute(xml_frame, "scaleY")
 
-				if(has_scaleX){
-					var __scaleX=Number(xml_frame.@scaleX)
-					fl.getDocumentDOM().selection[0].scaleX=__scaleX;
+				if (has_scaleX) {
+					var __scaleX = Number(xml_frame.@scaleX)
+					fl.getDocumentDOM().selection[0].scaleX = __scaleX;
 				}
 
-				if(has_scaleY){
-					var __scaleY=Number(xml_frame.@scaleY)
-					fl.getDocumentDOM().selection[0].scaleY=__scaleY;
+				if (has_scaleY) {
+					var __scaleY = Number(xml_frame.@scaleY)
+					fl.getDocumentDOM().selection[0].scaleY = __scaleY;
 				}
 
 			}
