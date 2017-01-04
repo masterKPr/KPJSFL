@@ -136,16 +136,15 @@ function create_bitmap(doc, xml_bitmap) {
 		item.name = String(xml_bitmap.@rename);
 	}
 
-	if (quality != 0) {
 		image_compress(item, quality);
-	}
-	set_item_link(item, link_name);
+	  set_item_link(item, link_name);
 }
 
 update_bitmap.help = "通过配置表的link_name在文档中更新图片";
 function update_bitmap(doc, xml_bitmap) {
 	var link_name = String(xml_bitmap.@link_name);
 	var has_name = xml_has_attribute(xml_bitmap, "rename");
+	var quality = Number(xml_bitmap.@quality);
 	var rename = String(xml_bitmap.@rename);
 
 	var item = get_item_by_link(doc, link_name);
@@ -154,6 +153,8 @@ function update_bitmap(doc, xml_bitmap) {
 		doc.library.deleteItem(item.name);
 		create_bitmap(doc, xml_bitmap);
 	} else if (item && has_name && item.name == rename) {
+
+		image_compress(item, quality);
 		return; //存在 同名 跳过
 	} else {
 		create_bitmap(doc, xml_bitmap);

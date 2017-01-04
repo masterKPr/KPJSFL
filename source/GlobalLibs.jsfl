@@ -4,7 +4,7 @@
  *@support:525398535@qq.com
  */
 
-version = "1.3.0";
+version = "1.3.1";
 init();
 
 init.help = "启动设置";
@@ -131,10 +131,12 @@ function lib_bitmap_compress(doc, quality) {
 image_compress.help = "单个图片压缩";
 function image_compress(item, quality) {
 	/*单个图片压缩*/
-	if (item.compressionType != "photo") {
-		item.compressionType = "photo";
+	if (quality != 0) {
+		if (item.compressionType != "photo") {
+			item.compressionType = "photo";
+		}
+		item.quality = quality;
 	}
-	item.quality = quality;
 }
 
 set_item_link.help = "设置库项目导出类名"
